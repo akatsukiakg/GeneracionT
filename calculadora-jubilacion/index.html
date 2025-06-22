@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Jubilación</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator-card">
+            <div class="image-container">
+                <div class="retirement-image">👴</div>
+            </div>
+            
+            <div class="calculator-content">
+                <h1>Calculadora de Jubilación</h1>
+                <h2>¿Puedes jubilarte en Argentina?</h2>
+                
+                <div class="form-section">
+                    <div class="input-group">
+                        <label for="edad">Ingresa tu edad:</label>
+                        <input type="number" id="edad" min="1" max="120" placeholder="Ej: 65">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="genero">Selecciona tu género:</label>
+                        <select id="genero">
+                            <option value="">Selecciona una opción</option>
+                            <option value="mujer">Mujer</option>
+                            <option value="hombre">Hombre</option>
+                        </select>
+                    </div>
+                    
+                    <button class="calculate-btn" onclick="calcularJubilacion()">🔍 Verificar Jubilación</button>
+                </div>
+                
+                <div id="resultado" class="result-section" style="display: none;">
+                    <div class="result-content">
+                        <div class="result-icon"></div>
+                        <h3 class="result-title"></h3>
+                        <p class="result-message"></p>
+                        <button class="restart-btn" onclick="reiniciar()">🔄 Calcular de nuevo</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

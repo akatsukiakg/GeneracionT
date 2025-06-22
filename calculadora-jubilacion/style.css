@@ -1,0 +1,303 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+    min-height: 100vh;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Animación de estrellas de fondo */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+        radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+        radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+        radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.6), transparent),
+        radial-gradient(2px 2px at 160px 30px, #ddd, transparent);
+    background-repeat: repeat;
+    background-size: 200px 100px;
+    animation: sparkle 20s linear infinite;
+    z-index: -1;
+}
+
+@keyframes sparkle {
+    from { transform: translateY(0px); }
+    to { transform: translateY(-100px); }
+}
+
+/* Container principal */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Tarjeta de calculadora */
+.calculator-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 40px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Imagen del escenario */
+.image-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.retirement-image {
+    font-size: 80px;
+    margin: 20px 0;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Contenido de la calculadora */
+.calculator-content h1 {
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #00d4ff, #ff00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+}
+
+.calculator-content h2 {
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 30px;
+    color: #00d4ff;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+}
+
+/* Sección del formulario */
+.form-section {
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+    color: #e0e0e0;
+    font-weight: bold;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid rgba(0, 212, 255, 0.5);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-size: 1.1em;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: #00d4ff;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.input-group select option {
+    background: #1a1a2e;
+    color: #ffffff;
+}
+
+/* Botón de calcular */
+.calculate-btn {
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.3), rgba(255, 0, 255, 0.3));
+    border: 2px solid rgba(0, 212, 255, 0.5);
+    border-radius: 15px;
+    color: #ffffff;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.calculate-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.4);
+    border-color: #00d4ff;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.4), rgba(255, 0, 255, 0.4));
+}
+
+/* Sección de resultados */
+.result-section {
+    text-align: center;
+    padding: 30px 0;
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.result-content {
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.result-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.result-title {
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.result-message {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: #e0e0e0;
+}
+
+/* Estilos para diferentes tipos de resultado */
+.result-content.can-retire {
+    background: rgba(0, 255, 0, 0.1);
+    border: 2px solid rgba(0, 255, 0, 0.3);
+}
+
+.result-content.can-retire .result-icon::before {
+    content: '🎉';
+}
+
+.result-content.can-retire .result-title {
+    color: #00ff00;
+    text-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+}
+
+.result-content.cannot-retire {
+    background: rgba(255, 71, 87, 0.1);
+    border: 2px solid rgba(255, 71, 87, 0.3);
+}
+
+.result-content.cannot-retire .result-icon::before {
+    content: '⏰';
+}
+
+.result-content.cannot-retire .result-title {
+    color: #ff4757;
+    text-shadow: 0 0 15px rgba(255, 71, 87, 0.5);
+}
+
+/* Botón de reinicio */
+.restart-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    border: 2px solid #ff6b6b;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.restart-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+    background: linear-gradient(135deg, #ee5a24, #ff6b6b);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .calculator-card {
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    .calculator-content h1 {
+        font-size: 2.2em;
+    }
+    
+    .calculator-content h2 {
+        font-size: 1.4em;
+    }
+    
+    .retirement-image {
+        font-size: 60px;
+    }
+    
+    .input-group input,
+    .input-group select {
+        padding: 12px;
+        font-size: 1em;
+    }
+    
+    .calculate-btn {
+        padding: 15px;
+        font-size: 1.1em;
+    }
+    
+    .result-title {
+        font-size: 1.8em;
+    }
+    
+    .result-message {
+        font-size: 1em;
+    }
+}

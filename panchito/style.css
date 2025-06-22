@@ -1,0 +1,21 @@
+.panchito_body{
+    width: 100px; height: 100px; 
+    background-color:yellow;
+    border-radius: 50% 50% 0 0; border-top: 20px solid yellow;
+    margin: auto;
+}
+
+.panchito_head{
+    width: 150px;height: 200px;
+    background-color:orange;
+    margin: auto;
+    border-radius: 10%;
+}
+
+.panchito_legs{
+    width: 50px; height:150px; 
+    background-color:red;
+    border-radius: 0 0 50% 50%; 
+    border-bottom: 20px solid red; 
+    margin: auto;
+}

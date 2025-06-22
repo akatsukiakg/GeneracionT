@@ -1,0 +1,243 @@
+/* 1. Clases para "Imperio" y "Rebeldes" con colores de fondo diferentes */
+.Imperio {
+    background-color: #2c2c2c; /* Gris oscuro para el Imperio */
+    color: #ff0000; /* Texto rojo */
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    border: 2px solid #ff0000;
+}
+
+.Rebeldes {
+    background-color: #1e3a8a; /* Azul oscuro para los Rebeldes */
+    color: #fbbf24; /* Texto dorado */
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    border: 2px solid #fbbf24;
+}
+
+/* 2. IDs para "Darth Vader" y "Luke" para estilos específicos */
+#DarthVader {
+    background-color: #000000;
+    color: #ff0000;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    border: 3px solid #ff0000;
+    border-radius: 10px;
+    text-shadow: 0 0 10px #ff0000;
+}
+
+#Luke {
+    background-color: #87ceeb;
+    color: #000080;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    border: 3px solid #000080;
+    border-radius: 10px;
+    text-shadow: 0 0 10px #87ceeb;
+}
+
+/* 3. Clase "Soldados" con borde rayado y espacio entre letras */
+.Soldados {
+    border: 3px dashed #666666;
+    letter-spacing: 3px;
+    padding: 10px;
+    margin: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* 4. Clase "Apoyo" para centrar el texto */
+.Apoyo {
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+}
+
+/* 5. Clase "Naves" para poner nombres en mayúsculas */
+.Naves {
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: #4a5568;
+    color: #ffffff;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 8px;
+}
+
+.Naves p {
+    margin: 8px 0;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+/* 6. Estilo para "Droides" para centrar las imágenes */
+.Droides {
+    text-align: center;
+    background-color: #fef3c7;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    border: 2px solid #f59e0b;
+}
+
+.Droides div {
+    font-size: 20px;
+    margin: 10px 0;
+    padding: 8px;
+}
+
+.Droides h3 {
+    color: #92400e;
+    margin-bottom: 15px;
+}
+
+/* Estilos para la página principal de navegación */
+.main-container {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.main-container h1 {
+    font-size: 48px;
+    color: #ffd700;
+    text-shadow: 0 0 20px #ffd700;
+    margin-bottom: 10px;
+    letter-spacing: 8px;
+}
+
+.subtitle {
+    font-size: 20px;
+    color: #cccccc;
+    margin-bottom: 50px;
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.dark-side-btn, .jedi-btn {
+    display: block;
+    text-decoration: none;
+    padding: 30px;
+    border-radius: 15px;
+    width: 250px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.dark-side-btn {
+    background: linear-gradient(135deg, #000000, #ff0000);
+    color: #ffffff;
+    border: 3px solid #ff0000;
+}
+
+.jedi-btn {
+    background: linear-gradient(135deg, #1e3a8a, #87ceeb);
+    color: #ffffff;
+    border: 3px solid #87ceeb;
+}
+
+.dark-side-btn:hover, .jedi-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+}
+
+.dark-side-btn h2, .jedi-btn h2 {
+    margin: 0 0 10px 0;
+    font-size: 24px;
+}
+
+.dark-side-btn p, .jedi-btn p {
+    margin: 0;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+/* Botón de regreso */
+.back-btn {
+    display: inline-block;
+    color: #ffd700;
+    text-decoration: none;
+    font-size: 18px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    border: 2px solid #ffd700;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+    background-color: #ffd700;
+    color: #000000;
+}
+
+/* Estilos para imágenes de personajes */
+.character-image {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin: 0 auto 15px auto;
+    display: block;
+    border-radius: 10px;
+    border: 3px solid #ffd700;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+}
+
+/* Estilos para imágenes de droides */
+.droid-image {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin: 0 auto 10px auto;
+    display: block;
+    border-radius: 8px;
+    border: 2px solid #cccccc;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 5px;
+}
+
+.droid-item {
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.soldiers-section {
+    margin: 30px 0;
+}
+
+/* Estilos generales para mejorar la apariencia */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0f0f23;
+    color: #ffffff;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 36px;
+}
+
+h2, h3 {
+    margin-top: 0;
+    text-align: center;
+}
