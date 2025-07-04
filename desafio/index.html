@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafío JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="desafio-card">
+            <div class="image-container">
+                <div class="desafio-image">💻</div>
+            </div>
+            
+            <div class="desafio-content">
+                <h1>Desafío JavaScript</h1>
+                <h2>Ejercicios Resueltos</h2>
+                
+                <div class="ejercicios-nav">
+                    <button class="nav-btn active" data-ejercicio="1">Ejercicio 1</button>
+                    <button class="nav-btn" data-ejercicio="2">Ejercicio 2</button>
+                    <button class="nav-btn" data-ejercicio="3">Ejercicio 3</button>
+                    <button class="nav-btn" data-ejercicio="4">Ejercicio 4</button>
+                    <button class="nav-btn" data-ejercicio="5">Ejercicio 5</button>
+                </div>
+                
+                <div class="ejercicio-section" id="ejercicio1">
+                    <h3>Evaluación de Rendimiento</h3>
+                    <p class="descripcion">Esta función evalúa el rendimiento de un alumno según su nota.</p>
+                    <pre class="codigo">function evaluarRendimiento(nota) {
+  if (nota < 0 || nota > 10 || isNaN(nota)) {
+    return "Nota inválida. Debe ser un número entre 0 y 10";
+  }
+  
+  if (nota >= 0 && nota < 2) {
+    return "Muy mal";
+  } else if (nota >= 2 && nota < 5) {
+    return "Mal";
+  } else if (nota >= 5 && nota < 6) {
+    return "Tan cerca pero tan lejos";
+  } else if (nota >= 6 && nota < 8) {
+    return "Bien!";
+  } else {
+    return "Messi?";
+  }
+}</pre>
+                    <div class="prueba-section">
+                        <h4>Prueba la función:</h4>
+                        <div class="input-group">
+                            <label for="nota-input">Nota:</label>
+                            <input type="number" id="nota-input" min="0" max="10" step="0.5" placeholder="Ingresa una nota">
+                        </div>
+                        <button class="test-btn" onclick="probarEjercicio1()">Probar</button>
+                        <div class="resultado" id="resultado1"></div>
+                    </div>
+                </div>
+                
+                <div class="ejercicio-section" id="ejercicio2" style="display: none;">
+                    <h3>THE BIGGEST ONE</h3>
+                    <p class="descripcion">Compara dos números y retorna el mayor, o la primera y última letra de una palabra si son iguales.</p>
+                    <pre class="codigo">function biggestOne(num1, num2, palabra) {
+  if (isNaN(num1) || isNaN(num2)) {
+    return "Los dos primeros parámetros deben ser números";
+  }
+  
+  if (typeof palabra !== 'string' || palabra.length === 0) {
+    return "El tercer parámetro debe ser una palabra válida";
+  }
+  
+  if (num1 > num2) {
+    return num1;
+  } else if (num2 > num1) {
+    return num2;
+  } else {
+    return palabra[0] + palabra[palabra.length - 1];
+  }
+}</pre>
+                    <div class="prueba-section">
+                        <h4>Prueba la función:</h4>
+                        <div class="input-group">
+                            <label for="num1-input">Número 1:</label>
+                            <input type="number" id="num1-input" placeholder="Primer número">
+                        </div>
+                        <div class="input-group">
+                            <label for="num2-input">Número 2:</label>
+                            <input type="number" id="num2-input" placeholder="Segundo número">
+                        </div>
+                        <div class="input-group">
+                            <label for="palabra-input">Palabra:</label>
+                            <input type="text" id="palabra-input" placeholder="Ingresa una palabra">
+                        </div>
+                        <button class="test-btn" onclick="probarEjercicio2()">Probar</button>
+                        <div class="resultado" id="resultado2"></div>
+                    </div>
+                </div>
+                
+                <div class="ejercicio-section" id="ejercicio3" style="display: none;">
+                    <h3>FROOTLOOP</h3>
+                    <p class="descripcion">Filtra un array de objetos para obtener solo las frutas.</p>
+                    <pre class="codigo">function filtrarFrutas(array) {
+  if (!Array.isArray(array)) {
+    return "El parámetro debe ser un array";
+  }
+  
+  const soloFrutas = array.filter(item => 'fruta' in item);
+  const nombresFrutas = soloFrutas.map(item => item.fruta);
+  
+  return { frutas: nombresFrutas };
+}</pre>
+                    <div class="prueba-section">
+                        <h4>Resultado:</h4>
+                        <pre class="resultado-fijo">// Array de entrada:
+let frutasYVerduras = [
+  {fruta:"banana"},
+  {verdura:"apio"},
+  {fruta:"manzana"},
+  {fruta:"frutilla"},
+  {verdura:"zanahoria"},
+  {fruta:"kiwi"},
+  {fruta:"sandia"},
+  {fruta:"melon"},
+  {verdura:"repollo"},
+  {fruta:"mango"}
+];
+
+// Resultado:
+{
+  frutas: [
+    "banana", "manzana", "frutilla",
+    "kiwi", "sandia", "melon", "mango"
+  ]
+}</pre>
+                    </div>
+                </div>
+                
+                <div class="ejercicio-section" id="ejercicio4" style="display: none;">
+                    <h3>SODA DISPENSER</h3>
+                    <p class="descripcion">Crea un dispensador de gaseosas que permite consultar el stock.</p>
+                    <pre class="codigo">function dispenserGaseosas(unidades, gaseosas) {
+  if (!Array.isArray(unidades) || !Array.isArray(gaseosas)) {
+    return "Ambos parámetros deben ser arrays";
+  }
+  
+  if (unidades.length !== gaseosas.length) {
+    return "Los arrays deben tener la misma longitud";
+  }
+  
+  const gaseosasEnStock = {};
+  
+  for (let i = 0; i < gaseosas.length; i++) {
+    gaseosasEnStock[gaseosas[i]] = unidades[i];
+  }
+  
+  return function consultarStock(gaseosa) {
+    if (gaseosa in gaseosasEnStock) {
+      if (gaseosasEnStock[gaseosa] > 0) {
+        return `Sí, hay ${gaseosasEnStock[gaseosa]} unidades de ${gaseosa}`;
+      } else {
+        return `No hay stock de ${gaseosa}`;
+      }
+    } else {
+      return `${gaseosa} no está en nuestro catálogo`;
+    }
+  };
+}</pre>
+                    <div class="prueba-section">
+                        <h4>Prueba la función:</h4>
+                        <div class="input-group">
+                            <label for="gaseosa-input">Consultar gaseosa:</label>
+                            <select id="gaseosa-input">
+                                <option value="cocacola">Coca Cola</option>
+                                <option value="sprite">Sprite</option>
+                                <option value="fanta">Fanta</option>
+                                <option value="seven up">Seven Up</option>
+                                <option value="pepsi">Pepsi</option>
+                            </select>
+                        </div>
+                        <button class="test-btn" onclick="probarEjercicio4()">Consultar</button>
+                        <div class="resultado" id="resultado4"></div>
+                    </div>
+                </div>
+                
+                <div class="ejercicio-section" id="ejercicio5" style="display: none;">
+                    <h3>AÑO DE NACIMIENTO</h3>
+                    <p class="descripcion">Agrega el año de nacimiento a un array de objetos con nombre y edad.</p>
+                    <pre class="codigo">function agregarAñoNacimiento(personas) {
+  if (!Array.isArray(personas)) {
+    return "El parámetro debe ser un array";
+  }
+  
+  const añoActual = new Date().getFullYear();
+  
+  return personas.map(persona => {
+    if (!('nombre' in persona) || !('edad' in persona)) {
+      return persona;
+    }
+    
+    const personaConAño = {...persona};
+    personaConAño.añoNacimiento = añoActual - persona.edad;
+    
+    return personaConAño;
+  });
+}</pre>
+                    <div class="prueba-section">
+                        <h4>Prueba la función:</h4>
+                        <div class="input-group">
+                            <label for="nombre-input">Nombre:</label>
+                            <input type="text" id="nombre-input" placeholder="Ingresa un nombre">
+                        </div>
+                        <div class="input-group">
+                            <label for="edad-input">Edad:</label>
+                            <input type="number" id="edad-input" min="1" max="120" placeholder="Ingresa una edad">
+                        </div>
+                        <button class="test-btn" onclick="probarEjercicio5()">Calcular</button>
+                        <div class="resultado" id="resultado5"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="ejercicio1.js"></script>
+    <script src="ejercicio2.js"></script>
+    <script src="ejercicio3.js"></script>
+    <script src="ejercicio4.js"></script>
+    <script src="ejercicio5.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

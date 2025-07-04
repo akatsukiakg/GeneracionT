@@ -1,0 +1,285 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+    min-height: 100vh;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Animación de estrellas de fondo */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+        radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+        radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+        radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.6), transparent),
+        radial-gradient(2px 2px at 160px 30px, #ddd, transparent);
+    background-repeat: repeat;
+    background-size: 200px 100px;
+    animation: sparkle 20s linear infinite;
+    z-index: -1;
+}
+
+@keyframes sparkle {
+    from { transform: translateY(0px); }
+    to { transform: translateY(-100px); }
+}
+
+/* Container principal */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Tarjeta de desafío */
+.desafio-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 40px;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Imagen del desafío */
+.image-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.desafio-image {
+    font-size: 80px;
+    margin: 20px 0;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Contenido del desafío */
+.desafio-content h1 {
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #00d4ff, #ff00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+}
+
+.desafio-content h2 {
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 30px;
+    color: #00d4ff;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+}
+
+.desafio-content h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #ff9d00;
+    text-shadow: 0 0 10px rgba(255, 157, 0, 0.3);
+}
+
+.desafio-content h4 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #00d4ff;
+}
+
+/* Navegación de ejercicios */
+.ejercicios-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.nav-btn {
+    padding: 10px 15px;
+    background: rgba(0, 212, 255, 0.1);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover, .nav-btn.active {
+    background: rgba(0, 212, 255, 0.3);
+    border-color: #00d4ff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+}
+
+/* Sección de ejercicio */
+.ejercicio-section {
+    margin-bottom: 30px;
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.descripcion {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #e0e0e0;
+}
+
+/* Código */
+.codigo {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.9em;
+    line-height: 1.5;
+    overflow-x: auto;
+    margin-bottom: 25px;
+    color: #00ff9d;
+    border-left: 3px solid #00d4ff;
+    white-space: pre-wrap;
+}
+
+/* Sección de prueba */
+.prueba-section {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1em;
+    color: #e0e0e0;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid rgba(0, 212, 255, 0.3);
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.5); /* Fondo más oscuro para mejor contraste */
+    color: #ffffff;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+/* Aseguramos que las opciones del select también sean legibles */
+.input-group select option {
+    background-color: #1a1a2e; /* Fondo oscuro para las opciones */
+    color: #ffffff; /* Texto blanco */
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: #00d4ff;
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+}
+
+.test-btn {
+    padding: 12px 25px;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.3), rgba(255, 0, 255, 0.3));
+    border: 2px solid rgba(0, 212, 255, 0.5);
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.test-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
+    border-color: #00d4ff;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.4), rgba(255, 0, 255, 0.4));
+}
+
+.resultado {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    padding: 15px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    min-height: 50px;
+    color: #00ff9d;
+}
+
+.resultado-fijo {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    padding: 15px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.9em;
+    line-height: 1.5;
+    overflow-x: auto;
+    color: #00ff9d;
+    white-space: pre-wrap;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .desafio-card {
+        padding: 25px;
+    }
+    
+    .desafio-content h1 {
+        font-size: 2.2em;
+    }
+    
+    .desafio-content h2 {
+        font-size: 1.5em;
+    }
+    
+    .ejercicios-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav-btn {
+        width: 100%;
+        max-width: 200px;
+    }
+}
