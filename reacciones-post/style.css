@@ -1,0 +1,105 @@
+:root{
+  --bg:#0f1724;
+  --card:#0b1220;
+  --accent:#06b6d4;
+  --muted:#94a3b8;
+  --like:#ff6b81;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(180deg,#071021 0%, #0b1220 60%);
+  color:#e6eef8;
+  font-family:Inter, 'Segoe UI', Arial, sans-serif;
+}
+.app{
+  width:min(760px,96%);
+  padding:20px;
+}
+.post-card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.12));
+  border-radius:14px;
+  padding:18px;
+  border:1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+}
+.post-image{
+  width:100%;
+  height:320px;
+  background-size:cover;
+  background-position:center;
+  border-radius:10px;
+  margin-bottom:12px;
+}
+.post-text{
+  font-size:1.05rem;
+  margin-bottom:12px;
+}
+.reactions{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  margin-bottom:12px;
+}
+.react-btn{
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.04);
+  padding:8px 12px;
+  border-radius:999px;
+  cursor:pointer;
+  color:var(--muted);
+  transition:transform .12s ease, background .12s ease, color .12s ease;
+}
+.react-btn .emoji{
+  font-size:1.2rem;
+  transform-origin:center;
+  transition:transform .18s cubic-bezier(.2,.9,.2,1);
+}
+.react-btn.pop .emoji{
+  transform:scale(1.45) rotate(-10deg);
+}
+.react-btn:hover{transform:translateY(-3px)}
+.react-count{font-weight:600; color:var(--accent)}
+.comment-form{
+  display:flex;
+  gap:8px;
+  margin-top:8px;
+}
+.comment-form input{
+  flex:1;
+  padding:10px 12px;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,0.04);
+  background:rgba(255,255,255,0.02);
+  color:inherit;
+}
+.comment-form button{
+  padding:10px 14px;
+  border-radius:8px;
+  border:none;
+  background:var(--accent);
+  color:#021124;
+  font-weight:700;
+  cursor:pointer;
+}
+.error-msg{color:#ff7b7b; font-size:0.9rem; margin-top:6px}
+.comments-list{margin-top:12px; display:flex; flex-direction:column; gap:8px}
+.comment-item{
+  background:rgba(255,255,255,0.02);
+  padding:8px 10px;
+  border-radius:8px;
+  font-size:0.95rem;
+  color:#d8eef8;
+}
+.small-muted{color:var(--muted); font-size:0.9rem}
+/* responsive */
+@media (max-width:520px){
+  .post-image{height:200px}
+}
