@@ -49,7 +49,7 @@ function Post(){
   return (
     <div className="app">
       <div className="post-card">
-        <div className="post-image" style={{backgroundImage: `url('https://images.unsplash.com/photo-1547721064-da6cfb341d50?auto=format&fit=crop&w=1200&q=60')`}} aria-hidden></div>
+  <div className="post-image" style={{backgroundImage: `url('images/5e003ad7517dd.jpg')`}} aria-hidden></div>
         <div className="post-text">¡Mi primer post en Reactbook! Probando reacciones y comentarios. 💬</div>
 
         <div className="reactions">
