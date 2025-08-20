@@ -5,7 +5,6 @@ export default function CharacterList({onSelect, lang='es'}){
   const [chars, setChars] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // UI state
   const [query, setQuery] = useState('');
   const [speciesFilter, setSpeciesFilter] = useState('all');
   const [statusFilter, setStatusFilter] = useState('all');
@@ -28,13 +27,11 @@ export default function CharacterList({onSelect, lang='es'}){
     return ()=> mounted = false;
   },[]);
 
-  // derive unique species and statuses for filters
   const speciesOptions = [{key:'all', text:'Todos', value:'all'}, ...Array.from(new Set(chars.map(c=>c.species))).map(s=>({key:s, text:s, value:s}))];
   const statusOptions = [{key:'all', text:'Todos', value:'all'}, ...Array.from(new Set(chars.map(c=>c.status))).map(s=>({key:s, text:s, value:s}))];
 
   if(loading) return <div className="no-results">{lang === 'es' ? 'Cargando personajes...' : 'Loading characters...'}</div>;
 
-  // filtering
   const filtered = chars.filter(c=>{
     const matchesQuery = c.name.toLowerCase().includes(query.toLowerCase());
     const matchesSpecies = speciesFilter === 'all' ? true : c.species === speciesFilter;
