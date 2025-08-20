@@ -5,7 +5,7 @@ import { Container, Button } from 'semantic-ui-react';
 
 export default function App(){
   const [selected, setSelected] = useState(null);
-  const [lang, setLang] = useState('es'); // 'es' or 'en'
+  const [lang, setLang] = useState('es'); 
 
   function handleSelect(character){
     setSelected(character);
