@@ -1,0 +1,23 @@
+/* Custom UI styles for Rick and Morty Explorer */
+body { background: linear-gradient(180deg,#0b1220 0%, #071021 60%); color: #e6eef8; }
+h1 { color: #fff; text-shadow: 0 6px 18px rgba(2,6,23,0.6); }
+.app-container { padding: 24px; }
+.top-bar { display:flex; gap:12px; align-items:center; margin-bottom:18px; }
+.filter-panel { background: rgba(255,255,255,0.02); padding:12px; border-radius:10px; border:1px solid rgba(255,255,255,0.04); }
+.search-input { width:320px; }
+.card-custom { border-radius:12px; overflow:hidden; box-shadow: 0 10px 30px rgba(2,6,23,0.6); }
+.card-custom .content {
+	/* footer area: keep it light so meta text is readable over white */
+	background: #ffffff !important;
+	color: #0b1220 !important;
+}
+.card-custom .header { color: #0b1220 !important; }
+.card-custom .meta { color: #374151 !important; font-weight:600 !important; }
+
+/* Character detail adjustments for readability */
+.ui.segment { background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06)) !important; color: #e6eef8 !important; }
+.ui.segment h2 { color: #fff !important; }
+.ui.segment .list .item { color: #d8eef8 !important; }
+.pagination { display:flex; gap:8px; align-items:center; justify-content:center; margin-top:18px; }
+.no-results { text-align:center; color:#ffd7a8; padding:24px; }
+@media (max-width:600px){ .search-input{ width:100%; } .top-bar{ flex-direction:column; align-items:stretch } }
